@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-t" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Smart Shopping List</title>
+    <style>
+      :root {
+          --color-primary-50: 238 242 255;  /* indigo-50 */
+          --color-primary-100: 224 231 255; /* indigo-100 */
+          --color-primary-200: 199 210 254; /* indigo-200 */
+          --color-primary-400: 129 140 248; /* indigo-400 */
+          --color-primary-500: 99 102 241;  /* indigo-500 */
+          --color-primary-600: 79 70 229;   /* indigo-600 */
+          --color-primary-700: 67 56 202;   /* indigo-700 */
+          --color-primary-900: 49 46 129;   /* indigo-900 */
+      }
+      .theme-emerald {
+          --color-primary-50: 236 253 245;  /* emerald-50 */
+          --color-primary-100: 209 250 229; /* emerald-100 */
+          --color-primary-200: 167 243 208; /* emerald-200 */
+          --color-primary-400: 52 211 153;  /* emerald-400 */
+          --color-primary-500: 16 185 129;  /* emerald-500 */
+          --color-primary-600: 5 150 105;   /* emerald-600 */
+          --color-primary-700: 4 120 87;    /* emerald-700 */
+          --color-primary-900: 6 78 59;     /* emerald-900 */
+      }
+      .theme-rose {
+          --color-primary-50: 255 241 242;  /* rose-50 */
+          --color-primary-100: 255 228 230; /* rose-100 */
+          --color-primary-200: 254 205 211; /* rose-200 */
+          --color-primary-400: 251 113 133; /* rose-400 */
+          --color-primary-500: 244 63 94;   /* rose-500 */
+          --color-primary-600: 225 29 72;   /* rose-600 */
+          --color-primary-700: 190 18 60;   /* rose-700 */
+          --color-primary-900: 136 19 55;   /* rose-900 */
+      }
+      input[type="date"]::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        opacity: 0;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: 'rgb(var(--color-primary-50) / <alpha-value>)',
+                100: 'rgb(var(--color-primary-100) / <alpha-value>)',
+                200: 'rgb(var(--color-primary-200) / <alpha-value>)',
+                400: 'rgb(var(--color-primary-400) / <alpha-value>)',
+                500: 'rgb(var(--color-primary-500) / <alpha-value>)',
+                600: 'rgb(var(--color-primary-600) / <alpha-value>)',
+                700: 'rgb(var(--color-primary-700) / <alpha-value>)',
+                900: 'rgb(var(--color-primary-900) / <alpha-value>)',
+              },
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'fade-in-up': {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'float': {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+              'fade-out': {
+                '0%': { opacity: '1' },
+                '100%': { opacity: '0' },
+              }
+            },
+            animation: {
+              'fade-in': 'fade-in 0.5s ease-out forwards',
+              'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+              'float': 'float 3s ease-in-out infinite',
+              'fade-out': 'fade-out 0.5s ease-out forwards',
+            },
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-100 dark:bg-slate-900 pt-16">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Smart Shopping List",
+  "description": "An intelligent shopping list application that uses Gemini to automatically extract ingredients from recipes, helping you shop smarter and faster. Features a modern UI, progress tracking, and local storage persistence.",
+  "requestFramePermissions": []
+}
