@@ -1,5 +1,5 @@
 import React, { useState, useCallback, Fragment } from 'react';
-import { extractIngredientsFromRecipe } from '../services/geminiService';
+import { extractIngredientsFromRecipe } from '../services/aiService';
 import { ShoppingListItem } from '../types';
 
 const SparklesIcon: React.FC<{className?: string}> = ({className}) => (
@@ -82,7 +82,7 @@ export const RecipeModal: React.FC<RecipeModalProps> = ({ isOpen, onClose, onAdd
                 {!extractedItems ? (
                     <Fragment>
                         <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                            Paste your recipe below and let Gemini's magic extract the ingredients for you!
+                            Paste your recipe below and let AI's magic extract the ingredients for you!
                         </p>
                         <textarea
                             value={recipeText}

@@ -1,9 +1,8 @@
-
 import { ShoppingListItem } from '../types';
 
 export const extractIngredientsFromRecipe = async (recipeText: string): Promise<Omit<ShoppingListItem, 'id' | 'purchased'>[]> => {
     if (!process.env.OPENAI_API_KEY) {
-        throw new Error("OPENAI_API_KEY environment variable not set");
+        throw new Error("OPENAI_API_KEY environment variable not set. Please add it to the .env file.");
     }
 
     const API_URL = "https://api.openai.com/v1/chat/completions";
